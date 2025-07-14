@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - The Center Wire</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for about page */
+        .about-page {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid var(--primary-blue);
+        }
+        
+        .page-logo {
+            height: 400px;
+            width: auto;
+            margin-bottom: 1.5rem;
+        }
+        
+        .page-title {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--neutral-dark);
+            margin-bottom: 1rem;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--neutral-medium);
+            font-style: italic;
+        }
+        
+        .about-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .about-content h2 {
+            font-family: var(--font-serif);
+            color: var(--primary-blue);
+            margin: 2.5rem 0 1rem 0;
+            font-size: 1.8rem;
+            border-left: 4px solid var(--primary-blue);
+            padding-left: 1rem;
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: var(--neutral-dark);
+        }
+        
+        .mission-statement {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+            color: white !important;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .mission-statement h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white !important;
+        }
+        
+        .mission-statement p {
+            color: white !important;
+        }
+        
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .principle-card {
+            background: var(--neutral-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-blue);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .principle-card h4 {
+            font-family: var(--font-serif);
+            color: var(--primary-blue);
+            margin-bottom: 0.75rem;
+            font-size: 1.2rem;
+        }
+        
+        .principle-card p {
+            margin-bottom: 0;
+            color: var(--neutral-medium);
+        }
+        
+        .methodology-section {
+            background: var(--white);
+            border: 2px solid var(--light-blue);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .methodology-section h3 {
+            font-family: var(--font-serif);
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .methodology-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .methodology-list li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--neutral-dark);
+        }
+        
+        .methodology-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .team-section {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--neutral-bg);
+            border-radius: 12px;
+        }
+        
+        .team-section h3 {
+            font-family: var(--font-serif);
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, var(--neutral-dark), var(--dark-blue));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .contact-info h3 {
+            font-family: var(--font-serif);
+            margin-bottom: 1rem;
+        }
+        
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        
+        .contact-link {
+            color: var(--light-blue);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--light-blue);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            background-color: var(--light-blue);
+            color: var(--dark-blue);
+        }
+        
+        .back-to-home {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-home:hover {
+            color: var(--accent-blue);
+            transform: translateX(-4px);
+        }
+        
+        @media (max-width: 768px) {
+            .about-page {
+                padding: 1rem 0.5rem;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .principles-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="Logo.png" alt="The Center Wire" class="logo-img">
+                <div class="logo-text">
+                    <h1>THE CENTER WIRE</h1>
+                    <p class="tagline">Unbiased News From All Perspectives</p>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <div class="about-page">
+                <a href="index.html" class="back-to-home">← Back to Home</a>
+                
+                <!-- Page Header -->
+                <div class="page-header">
+                    <img src="Logo.png" alt="The Center Wire" class="page-logo">
+                    <h1 class="page-title">About The Center Wire</h1>
+                    <p class="page-subtitle">Committed to unbiased journalism through multiple perspectives</p>
+                </div>
+
+                <!-- About Content -->
+                <div class="about-content">
+                    <p>In an era of increasing polarization and media bias, The Center Wire stands as a beacon of balanced journalism. We believe that every story has multiple sides, and that informed citizens deserve to hear all perspectives before forming their own opinions.</p>
+
+                    <div class="mission-statement">
+                        <h3>Our Mission</h3>
+                        <p>To deliver comprehensive, unbiased news coverage by presenting multiple perspectives on every story, empowering readers to form their own informed opinions without editorial influence.</p>
+                    </div>
+
+                    <h2>Why We're Different</h2>
+                    <p>Traditional news outlets often present stories through a single lens, influenced by editorial positions, advertiser pressures, or political affiliations. The Center Wire takes a fundamentally different approach. Instead of telling you what to think, we show you how different groups, experts, and stakeholders view the same events.</p>
+
+                    <p>Every article we publish strives to include multiple perspectives, clearly labeled and fairly represented. Whether it's a political decision, economic policy, scientific breakthrough, or social issue, we ensure that conservative, liberal, and independent viewpoints are all given equal weight and consideration.</p>
+
+                    <h2>Our Editorial Principles</h2>
+                    <div class="principles-grid">
+                        <div class="principle-card">
+                            <h4>No Editorial Bias</h4>
+                            <p>We don't tell you what to think. Our job is to present facts and perspectives, allowing you to draw your own conclusions.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Multiple Viewpoints</h4>
+                            <p>Every story includes perspectives from different political, social, and expert viewpoints to ensure comprehensive coverage.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Transparent Sourcing</h4>
+                            <p>All sources are clearly cited and linked, allowing readers to verify information and explore topics further.</p>
+                        </div>
+                        <div class="principle-card">
+                            <h4>Fact-Based Reporting</h4>
+                            <p>We stick to verifiable facts and clearly distinguish between factual reporting and opinion or analysis.</p>
+                        </div>
+                    </div>
+
+                    <h2>Our Methodology</h2>
+                    <div class="methodology-section">
+                        <h3>How We Ensure Balance</h3>
+                        <ul class="methodology-list">
+                            <li><strong>Source Diversity:</strong> We actively seek out voices from across the political and ideological spectrum for every story</li>
+                            <li><strong>Bias Rating:</strong> Each article includes a transparent bias assessment, explaining our approach and any limitations</li>
+                            <li><strong>Expert Review:</strong> Stories involving technical or specialized topics are reviewed by subject matter experts from multiple backgrounds</li>
+                            <li><strong>Reader Feedback:</strong> We actively incorporate reader feedback to identify potential blind spots or missing perspectives</li>
+                            <li><strong>Regular Audits:</strong> Our editorial process is regularly reviewed to ensure we're meeting our standards for balanced reporting</li>
+                        </ul>
+                    </div>
+
+                    <h2>What You Can Expect</h2>
+                    <p>When you read The Center Wire, you can expect:</p>
+                    <p><strong>Comprehensive Coverage:</strong> We don't just report what happened; we explore why different groups view events differently and what the implications might be from various perspectives.</p>
+                    <p><strong>Respectful Dialogue:</strong> While we present opposing viewpoints, we do so with respect for all parties involved. We avoid inflammatory language and focus on substantive differences in perspective.</p>
+                    <p><strong>Educational Value:</strong> Our goal is to help readers understand complex issues more deeply by seeing them from multiple angles, fostering critical thinking and informed decision-making.</p>
+                    
+                    <div class="team-section">
+                        <h3>Our Commitment to You</h3>
+                        <p>We are committed to the principles of balanced reporting.</p>
+                        <p>We believe that democracy thrives when citizens have access to complete, unbiased information. By presenting multiple perspectives fairly and transparently, we aim to contribute to a more informed and thoughtful public discourse.</p>
+                    </div>
+
+                    <h2>Join the Conversation</h2>
+                    <p>The Center Wire is more than just a news site—it's a platform for informed dialogue and critical thinking. We encourage readers to engage with our content thoughtfully, consider multiple perspectives, and form their own well-reasoned opinions.</p>
+
+                    <p>If you notice a perspective we've missed or have feedback on our coverage, we want to hear from you. Our commitment to balanced journalism is an ongoing process, and reader input helps us improve.</p>
+
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        <p>Questions about our methodology? Suggestions for coverage? Feedback on our approach?</p>
+                        <div class="contact-links">
+                            <a href="https://www.facebook.com/TheCenterWire/" class="contact-link">Follow us on Facebook</a>
+                            <a href="https://www.facebook.com/groups/thecenterwire" class="contact-link">Get involved in our community</a>
+                            <a href="#" class="contact-link">Newsletter - Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About The Center Wire</h4>
+                    <p>Committed to delivering unbiased news by presenting multiple perspectives on every story. 
+                       Our mission is to inform, not influence.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Promise</h4>
+                    <ul>
+                        <li>No editorial bias</li>
+                        <li>Multiple viewpoints</li>
+                        <li>Fact-based reporting</li>
+                        <li>Transparent sourcing</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Newsletter</a>
+                        <a href="#" class="social-link">RSS Feed</a>
+                        <a href="#" class="social-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Center Wire. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
