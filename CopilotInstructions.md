@@ -71,6 +71,22 @@ Use these step-by-step instructions to convert generated news content into a pro
    - Use same summary as social media description
    - Replace `[RELEVANT KEYWORDS]` with comma-separated list (e.g., "Texas floods, Camp Mystic, emergency response, evacuation delay")
 
+5. **Update social sharing button URLs** (in the social-sharing section):
+   ```html
+   <!-- Replace [ARTICLE_URL] with full URL to article -->
+   <!-- Replace [ARTICLE_TITLE] with the article headline -->
+   ```
+   - Replace `[ARTICLE_URL]` with `https://thecenterwire.com/[FILENAME].html`
+   - Replace `[ARTICLE_TITLE]` with the article headline (URL-encoded for Twitter)
+   - Example: `https://thecenterwire.com/texas-floods-camp-mystic-tragedy.html`
+
+6. **Update Facebook Comments URL** (in the comments-section):
+   ```html
+   <div class="fb-comments" data-href="[ARTICLE_URL]" ...>
+   ```
+   - Replace `[ARTICLE_URL]` with the same full URL used for social sharing
+   - Comments are automatically scoped to this specific URL
+
 #### Step 4: Update Article Metadata
 1. **Find the article-meta section** (~line 185) and update:
    ```html
