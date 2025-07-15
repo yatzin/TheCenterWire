@@ -22,6 +22,9 @@ Use these step-by-step instructions to convert generated news content into a pro
    - Source links and citations
    - Article category (Politics, Business, World, Technology, Health, etc.)
    - Featured image URL and caption
+   - **Social media summary** (2-3 sentences for Facebook/Twitter sharing)
+   - **SEO keywords** (relevant topics, people, places for search optimization)
+   - **Image dimensions** (width and height for optimal social media display)
 
 #### Step 2: Copy Template File
 1. **Create a new file** by copying `template.html`
@@ -37,6 +40,36 @@ Use these step-by-step instructions to convert generated news content into a pro
    <title>[ARTICLE TITLE] - The Center Wire</title>
    ```
    Replace `[ARTICLE TITLE]` with the actual article headline
+
+2. **Update Open Graph meta tags for social media sharing** (lines ~8-16):
+   ```html
+   <meta property="og:title" content="[ARTICLE TITLE]">
+   <meta property="og:description" content="[ARTICLE SUMMARY]">
+   <meta property="og:image" content="[FEATURED IMAGE URL]">
+   <meta property="og:image:width" content="[IMAGE WIDTH]">
+   <meta property="og:image:height" content="[IMAGE HEIGHT]">
+   <meta property="og:url" content="https://thecenterwire.com/[ARTICLE FILENAME].html">
+   ```
+   - Replace `[ARTICLE SUMMARY]` with 2-3 sentence description for social media
+   - Use the same featured image URL from your content
+   - Include actual image dimensions (e.g., "1900" x "1267")
+   - Replace `[ARTICLE FILENAME]` with your HTML filename
+
+3. **Update Twitter Card meta tags** (lines ~18-22):
+   ```html
+   <meta name="twitter:title" content="[ARTICLE TITLE]">
+   <meta name="twitter:description" content="[ARTICLE SUMMARY]">
+   <meta name="twitter:image" content="[FEATURED IMAGE URL]">
+   ```
+   - Use the same title, summary, and image as Open Graph tags
+
+4. **Update standard SEO meta tags** (lines ~24-27):
+   ```html
+   <meta name="description" content="[ARTICLE SUMMARY]">
+   <meta name="keywords" content="[RELEVANT KEYWORDS]">
+   ```
+   - Use same summary as social media description
+   - Replace `[RELEVANT KEYWORDS]` with comma-separated list (e.g., "Texas floods, Camp Mystic, emergency response, evacuation delay")
 
 #### Step 4: Update Article Metadata
 1. **Find the article-meta section** (~line 185) and update:
