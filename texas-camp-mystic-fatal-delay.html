@@ -31,7 +31,7 @@
     <style>
         /* Additional styles for article page */
         .article-page {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 2rem 1rem;
         }
@@ -292,6 +292,8 @@
             background: var(--neutral-bg);
             border-radius: 8px;
             border: 1px solid #e2e8f0;
+            width: 100%;
+            overflow: hidden;
         }
         
         .comments-section h4 {
@@ -300,6 +302,15 @@
             margin-bottom: 1.5rem;
             text-align: center;
             font-size: 1.5rem;
+        }
+        
+        .fb-comments, .fb-comments iframe[style] {
+            width: 100% !important;
+            min-width: 550px !important;
+        }
+        
+        .fb-comments span {
+            width: 100% !important;
         }
         
         @media (max-width: 768px) {
@@ -475,10 +486,11 @@
                         <h4>Join the Discussion</h4>
                         <div class="fb-comments" 
                              data-href="https://thecenterwire.com/texas-camp-mystic-fatal-delay.html" 
-                             data-width="100%" 
+                             data-width="800" 
                              data-numposts="10"
                              data-order-by="social"
-                             data-lazy="true">
+                             data-lazy="true"
+                             data-mobile="true">
                         </div>
                     </div>
                 </div>

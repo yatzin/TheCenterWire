@@ -243,19 +243,6 @@ body {
     transform: scale(1.05);
 }
 
-.perspective-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: rgba(44, 82, 130, 0.9);
-    color: var(--white);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    backdrop-filter: blur(4px);
-}
-
 .article-content {
     padding: 2rem;
     display: flex;

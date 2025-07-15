@@ -233,7 +233,6 @@ This maintains proper content hierarchy with newest articles at top-left, aging 
              <a href="[NEW_ARTICLE].html">
                  <img src="[NEW_FEATURED_IMAGE]" alt="[NEW_ALT_TEXT]">
              </a>
-             <div class="perspective-badge">Multiple Perspectives</div>
          </div>
          <div class="article-content">
              <div class="article-meta">
