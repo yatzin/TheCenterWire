@@ -7,7 +7,7 @@ Use these step-by-step instructions to convert generated news content into a pro
 
 ### Prerequisites
 - Access to template.html file
-- Generated content with article text, sources, and metadata
+- Access Generated content with article text, sources, and metadata in file GeneratedContent.txt
 - Basic understanding of HTML structure
 
 ### Step-by-Step Process
@@ -186,11 +186,14 @@ Use these step-by-step instructions to convert generated news content into a pro
 **Primary Approach: Chronological Shift (Recommended)**
 This maintains proper content hierarchy with newest articles at top-left, aging out to bottom-right.
 
-1. **Remove the oldest article** (Article 6):
+1. **Remove the oldest article** (Article 9):
    - Delete the entire last `news-card` article to make space
    - This article "ages out" of the homepage
 
 2. **Shift all articles down/right** (work backwards to avoid overwrites):
+   - **Article 8 → Article 9 position**: Move 8th news card to 9th position
+   - **Article 7 → Article 8 position**: Move 7th news card to 8th position
+   - **Article 6 → Article 7 position**: Move 6th news card to 7th position
    - **Article 5 → Article 6 position**: Move 5th news card to 6th position
    - **Article 4 → Article 5 position**: Move 4th news card to 5th position  
    - **Article 3 → Article 4 position**: Move 3rd news card to 4th position
@@ -265,7 +268,13 @@ This maintains proper content hierarchy with newest articles at top-left, aging 
 - **Article 4**: Previous Article 3
 - **Article 5**: Previous Article 4
 - **Article 6**: Previous Article 5
-- **Removed**: Previous Article 6 (aged out)
+- **Article 7**: Previous Article 6
+- **Article 8**: Previous Article 7
+- **Article 9**: Previous Article 8
+- **Removed**: Previous Article 9 (aged out)
+
+6. **Double check your work**
+   - Go back and check your work.  Did you do Step 1?  Did you do Step 2?  What about Step 3?  What about Step 4? Step 5?  If anything is wrong, please correct it.
 
 ### Content Guidelines
 
