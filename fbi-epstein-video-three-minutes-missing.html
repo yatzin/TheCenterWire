@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearly Three Minutes Missing From FBI's "Raw" Jeffrey Epstein Prison Video - The Center Wire</title>
+    
+    <!-- Open Graph Meta Tags for Social Media Sharing -->
+    <meta property="og:title" content="Nearly Three Minutes Missing From FBI's 'Raw' Jeffrey Epstein Prison Video">
+    <meta property="og:description" content="Technical analysis reveals FBI surveillance footage from Jeffrey Epstein's final hours was edited in Adobe Premiere Pro with nearly 3 minutes removed, contradicting official claims of 'raw' video.">
+    <meta property="og:image" content="https://images.lbc.co.uk/images/704827?crop=16_9&width=660&relax=1&format=webp&signature=2lQSdlcpVydpumkCX8cmIYjTqQA=">
+    <meta property="og:image:width" content="660">
+    <meta property="og:image:height" content="371">
+    <meta property="og:url" content="https://thecenterwire.com/fbi-epstein-video-three-minutes-missing.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="The Center Wire">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nearly Three Minutes Missing From FBI's 'Raw' Jeffrey Epstein Prison Video">
+    <meta name="twitter:description" content="Technical analysis reveals FBI surveillance footage from Jeffrey Epstein's final hours was edited in Adobe Premiere Pro with nearly 3 minutes removed, contradicting official claims of 'raw' video.">
+    <meta name="twitter:image" content="https://images.lbc.co.uk/images/704827?crop=16_9&width=660&relax=1&format=webp&signature=2lQSdlcpVydpumkCX8cmIYjTqQA=">
+    
+    <!-- Standard Meta Tags -->
+    <meta name="description" content="Technical analysis reveals FBI surveillance footage from Jeffrey Epstein's final hours was edited in Adobe Premiere Pro with nearly 3 minutes removed, contradicting official claims of 'raw' video.">
+    <meta name="keywords" content="Jeffrey Epstein, FBI, surveillance video, Department of Justice, Trump administration, transparency, prison footage, DOJ">
+    <meta name="author" content="The Center Wire">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for article page */
+        .article-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .article-header {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 2rem;
+        }
+        
+        .article-body {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #374151;
+        }
+        
+        .article-body h3 {
+            font-family: var(--font-serif);
+            color: var(--primary-blue);
+            margin: 2.5rem 0 1.5rem 0;
+            font-size: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-blue);
+        }
+        
+        .article-body p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .article-image-full {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .article-image-full img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article-image-caption {
+            font-style: italic;
+            color: #6b7280;
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+        }
+        
+        .social-sharing {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: var(--neutral-bg);
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .share-label {
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-right: 0.5rem;
+        }
+        
+        .share-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .share-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .share-btn.facebook {
+            background: #1877f2;
+            color: white;
+        }
+        
+        .share-btn.facebook:hover {
+            background: #166fe5;
+            transform: translateY(-2px);
+        }
+        
+        .share-btn.twitter {
+            background: #1da1f2;
+            color: white;
+        }
+        
+        .share-btn.twitter:hover {
+            background: #1a91da;
+            transform: translateY(-2px);
+        }
+        
+        .share-btn.linkedin {
+            background: #0077b5;
+            color: white;
+        }
+        
+        .share-btn.linkedin:hover {
+            background: #006399;
+            transform: translateY(-2px);
+        }
+        
+        .share-btn.email {
+            background: #34d399;
+            color: white;
+        }
+        
+        .share-btn.email:hover {
+            background: #10b981;
+            transform: translateY(-2px);
+        }
+        
+        .share-btn.copy {
+            background: #6b7280;
+            color: white;
+        }
+        
+        .share-btn.copy:hover {
+            background: #5a6268;
+        }
+
+        .copy-feedback {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 14px;
+            z-index: 1000;
+            animation: fadeInOut 2s ease;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; }
+            20%, 80% { opacity: 1; }
+        }
+
+        /* Facebook Comments Styling */
+        .comments-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: var(--neutral-bg);
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .comments-section h4 {
+            font-family: var(--font-serif);
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        
+        .fb-comments, .fb-comments iframe[style] {
+            width: 100% !important;
+            min-width: 550px !important;
+        }
+        
+        .fb-comments span {
+            width: 100% !important;
+        }
+
+        @media (max-width: 768px) {
+            .share-buttons {
+                gap: 8px;
+            }
+            
+            .share-btn {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .comments-section {
+                margin-top: 2rem;
+                padding: 1rem;
+            }
+        }
+        
+        .quote-block {
+            background-color: var(--neutral-bg);
+            border-left: 4px solid var(--accent-blue);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .sources-section {
+            background-color: var(--neutral-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 3rem;
+        }
+        
+        .sources-section h4 {
+            font-family: var(--font-serif);
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .sources-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .sources-list li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .sources-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: bold;
+        }
+        
+        .sources-list a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        .sources-list a:hover {
+            text-decoration: underline;
+        }
+        
+        .bias-rating {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-blue));
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .back-to-home {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-home:hover {
+            color: var(--accent-blue);
+            transform: translateX(-4px);
+        }
+        
+        .perspective-nav {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .perspective-button {
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--primary-blue);
+            border-radius: 25px;
+            text-decoration: none;
+            color: var(--primary-blue);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .perspective-button:hover,
+        .perspective-button.active {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .perspective-nav {
+                flex-direction: column;
+            }
+            
+            .article-page {
+                padding: 1rem 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0&appId=1026122116396451">
+    </script>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="Logo.png" alt="The Center Wire" class="logo-img">
+                <div class="logo-text">
+                    <h1>THE CENTER WIRE</h1>
+                    <p class="tagline">Unbiased News From All Perspectives</p>
+                </div>
+            </a>
+            
+            <!-- Navigation -->
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <div class="article-page">
+                <a href="index.html" class="back-to-home">← Back to Home</a>
+                
+                <!-- Article Header -->
+                <div class="article-header">
+                    <div class="article-meta">
+                        <span class="category">POLITICS</span>
+                        <span class="date">July 17, 2025</span>
+                        <span class="read-time">8 min read</span>
+                    </div>
+                    <h1 class="article-title">Nearly Three Minutes Missing From FBI's "Raw" Jeffrey Epstein Prison Video</h1>
+                    
+                    <div class="perspective-nav">
+                        <a href="#background" class="perspective-button active">Background</a>
+                        <a href="#technical-analysis" class="perspective-button">Technical Analysis</a>
+                        <a href="#political-implications" class="perspective-button">Political Implications</a>
+                    </div>
+                </div>
+
+                <!-- Article Body -->
+                <div class="article-body">
+                    <div class="article-image-full">
+                        <img src="https://images.lbc.co.uk/images/704827?crop=16_9&width=660&relax=1&format=webp&signature=2lQSdlcpVydpumkCX8cmIYjTqQA=" alt="Jeffrey Epstein surveillance footage controversy">
+                        <div class="article-image-caption">The Department of Justice released surveillance footage from Jeffrey Epstein's final hours, but technical analysis reveals significant editing was performed on what officials described as "raw" video.</div>
+                    </div>
+
+                    <!-- Social Media Sharing Buttons -->
+                    <div class="social-sharing">
+                        <span class="share-label">Share this article:</span>
+                        <div class="share-buttons">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://thecenterwire.com/fbi-epstein-video-three-minutes-missing.html" target="_blank" class="share-btn facebook" aria-label="Share on Facebook">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="https://twitter.com/intent/tweet?url=https://thecenterwire.com/fbi-epstein-video-three-minutes-missing.html&text=Nearly%20Three%20Minutes%20Missing%20From%20FBI%27s%20%22Raw%22%20Jeffrey%20Epstein%20Prison%20Video" target="_blank" class="share-btn twitter" aria-label="Share on Twitter">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://thecenterwire.com/fbi-epstein-video-three-minutes-missing.html" target="_blank" class="share-btn linkedin" aria-label="Share on LinkedIn">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                            <a href="mailto:?subject=Nearly Three Minutes Missing From FBI's 'Raw' Jeffrey Epstein Prison Video&body=I thought you might find this article interesting: https://thecenterwire.com/fbi-epstein-video-three-minutes-missing.html" class="share-btn email" aria-label="Share via Email">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </a>
+                            <button onclick="copyToClipboard()" class="share-btn copy" aria-label="Copy link">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <p>The Department of Justice and FBI's release of surveillance footage from Jeffrey Epstein's final hours has raised new questions about transparency and government handling of the controversial case, after technical analysis revealed that approximately three minutes of footage appears to have been cut from what officials described as "full raw" video.</p>
+
+                    <h3 id="background">Background and Context</h3>
+                    <p>On July 14, 2025, the Department of Justice released nearly 11 hours of surveillance footage from the Metropolitan Correctional Center showing the area outside Jeffrey Epstein's prison cell on the night of August 9-10, 2019, before he was found dead. The release was part of the Trump administration's promised transparency initiative regarding the Epstein case.</p>
+
+                    <p>Jeffrey Epstein, the convicted sex offender and financier, died by suicide on August 10, 2019, while awaiting trial on federal sex trafficking charges at the Metropolitan Correctional Center in Manhattan. His death immediately sparked conspiracy theories, with many questioning the official suicide ruling. The facility's surveillance system was reportedly outdated and had not been properly maintained, with DVR hard drives that frequently malfunctioned.</p>
+
+                    <div class="quote-block">
+                        "Yeah, yeah, I would. I'd be inclined to do the Epstein. I'd have no problem with it."
+                        <br><strong>— Donald Trump, responding to questions about releasing Epstein files during 2024 campaign</strong>
+                    </div>
+
+                    <p>Trump's relationship with the Epstein case has evolved significantly over time. During his 2024 campaign, Trump made explicit promises about releasing Epstein files, creating expectations among his supporters for transparency on the case. These campaign commitments set the stage for the current controversy surrounding the video release.</p>
+
+                    <h3 id="technical-analysis">Technical Analysis and Discrepancies</h3>
+                    <p>Metadata analysis by WIRED magazine has revealed that the video was edited in Adobe Premiere Pro and that 2 minutes and 53 seconds of footage were removed from the original files before public release. Independent video forensics experts confirmed that the footage was assembled from two separate clips, with the editing occurring over more than three hours on May 23, 2025.</p>
+
+                    <p>The DOJ's release included both "raw" and enhanced versions of the surveillance footage, showing the common area of the Special Housing Unit where Epstein was held. The video contains a previously reported one-minute gap between 11:58:58 PM and midnight, which Attorney General Pam Bondi attributed to a nightly system reset. However, technical analysis has now revealed additional editing beyond this gap.</p>
+
+                    <div class="quote-block">
+                        "The metadata shows the file was edited and saved multiple times over more than three hours on May 23, 2025, before being uploaded to the DOJ website. Both versions contain internal comment markers typically used in editing software."
+                        <br><strong>— Technical analysis findings from WIRED magazine</strong>
+                    </div>
+
+                    <p>When questioned about the editing, DOJ officials explained that modifications were made to increase brightness and contrast for greater clarity. However, the presentation of edited video as "raw" footage has raised questions about the accuracy of official descriptions and the extent of modifications made to the original surveillance material.</p>
+
+                    <h3 id="political-implications">Political Implications and Public Response</h3>
+                    <p>The revelation of edited footage has intensified political divisions over the Epstein case. Trump supporters, who had expected revelations about high-profile individuals, have expressed anger at what they perceive as the administration's failure to deliver promised transparency. The backlash became so intense that Trump escalated his response significantly on July 16, 2025.</p>
+
+                    <p>In a lengthy Truth Social post, Trump dismissed criticism from within his own party, calling the controversy the "Jeffrey Epstein Hoax" and claiming his "PAST supporters have bought into this 'b--------,' hook, line, and sinker." During an Oval Office meeting with the Bahrain Crown Prince, Trump doubled down when pressed by ABC News, calling critics "stupid Republicans and foolish Republicans" who "fall into the net" of what he claimed was a Democratic conspiracy.</p>
+
+                    <div class="quote-block">
+                        "We put you in office, you ran on this platform. We didn't ask for it. And now we want it. We demand it."
+                        <br><strong>— Steven Taylor, Trump supporter at JD Vance event in West Pittston, Pennsylvania</strong>
+                    </div>
+
+                    <p>The controversy has created visible splits even among Trump's most loyal supporters. At a July 16 JD Vance event in West Pittston, Pennsylvania, lawn signs reading "WHERE IS THE LIST???" reflected grassroots frustration with the administration's handling of the Epstein files. However, other supporters maintained faith in Trump, with some comparing the administration to "the Avengers assembled, the Justice League of America."</p>
+
+                    <p>When directly asked by ABC News Chief White House Correspondent Mary Bruce if his name appears in the files, Trump pointed to the door and only said "thank you," declining to answer. Trump also stated he had "lost a lot of faith in certain people because they got duped by Democrats" and said he no longer wanted support from critics focusing on the Epstein story.</p>
+
+                    <p>Reddit users and online commentators have expressed skepticism about the video's authenticity and the government's handling of the case. Many users pointed to what they see as evidence of a cover-up, with comments describing the editing as "suspicious" and questioning the competence of officials involved. Some users suggested that the obvious nature of the editing might be intentional, designed to leave "breadcrumbs" for discovery.</p>
+
+                    <h3 id="conclusion">Implications and Ongoing Questions</h3>
+                    <p>While the missing footage does not necessarily indicate a cover-up or foul play, the presentation of edited video as "raw" footage undermines the transparency goals the Trump administration claimed to pursue. The technical analysis confirms that the video was processed and edited before release, contradicting official descriptions.</p>
+
+                    <p>The technical discrepancies have provided new ammunition for conspiracy theorists who question the official narrative of Epstein's death. The fact that the video was presented as "raw" footage when it had clearly been edited raises questions about government transparency and the handling of sensitive investigations.</p>
+
+                    <p>Legal implications remain limited, as the FBI and DOJ continue to maintain that their investigation found no evidence of foul play. However, the controversy has highlighted ongoing concerns about institutional credibility and the government's ability to effectively communicate complex investigations to the public.</p>
+
+                    <p>The Epstein case continues to serve as a flashpoint for broader questions about government transparency, institutional trust, and the handling of high-profile investigations involving powerful individuals. The recent revelations highlight the challenges of maintaining public confidence in official investigations when technical evidence contradicts official narratives.</p>
+
+                    <div class="bias-rating">
+                        <strong>BIAS RATING: NEUTRAL</strong><br>
+                        This report draws from both liberal (CNN) and conservative (Fox News) outlets, as well as technical analysis from WIRED magazine. The tone remains factual and avoids speculative language while acknowledging legitimate questions raised by the technical evidence. Both government explanations and public skepticism are presented fairly without endorsing conspiracy theories.
+                    </div>
+
+                    <div class="sources-section">
+                        <h4>Sources Referenced</h4>
+                        <ol class="sources-list">
+                            <li><a href="https://www.lbc.co.uk/usa/jeffrey-epstein-prison-footage/" target="_blank">Almost 3 minutes of footage missing from Epstein prison surveillance video – LBC – July 17, 2025</a></li>
+                            <li><a href="https://www.wired.com/story/the-fbis-jeffrey-epstein-prison-video-had-nearly-3-minutes-cut-out/" target="_blank">The FBI's Jeffrey Epstein Prison Video Had Nearly 3 Minutes Cut Out – WIRED – July 15, 2025</a></li>
+                            <li><a href="https://www.cnn.com/2025/07/07/politics/jeffrey-epstein-suicide-client-list-justice" target="_blank">Jeffrey Epstein died by suicide and there's no 'client list,' Justice Department says – CNN – July 7, 2025</a></li>
+                            <li><a href="https://www.foxnews.com/us/jeffrey-epstein-died-suicide-did-not-have-client-list-doj-memo" target="_blank">Jeffrey Epstein died by suicide, did not have client list: DOJ memo – Fox News – July 7, 2025</a></li>
+                            <li><a href="https://www.justice.gov/opa/media/1407001/dl?inline" target="_blank">Official memo and video release – Department of Justice – July 14, 2025</a></li>
+                            <li><a href="https://abcnews.go.com/Politics/trump-blasts-epstein-files-release-supporters/story?id=123799343" target="_blank">Trump blasts 'stupid' and 'foolish' Republicans amid calls to reveal more Epstein files – ABC News – July 16, 2025</a></li>
+                            <li><a href="https://www.wired.com/story/jeffrey-epstein-list-maga-angry-trump/" target="_blank">It's Not Just Epstein. MAGA Is Angry About a Lot of Things – WIRED – July 14, 2025</a></li>
+                            <li><a href="https://www.bbc.com/news/articles/cy4y9k7vmwlo" target="_blank">Trump's voters want to see the Epstein files - but have faith in their president – BBC News – July 17, 2025</a></li>
+                            <li><a href="https://abcnews.go.com/Politics/trump-jeffrey-epstein-years-including-2024-campaign-trail/story?id=123778541" target="_blank">What Trump has said about Jeffrey Epstein over the years, including on 2024 campaign trail – ABC News – July 16, 2025</a></li>
+                        </ol>
+                    </div>
+
+                    <!-- Facebook Comments Section -->
+                    <div class="comments-section">
+                        <h4>Join the Discussion</h4>
+                        <div class="fb-comments" 
+                             data-href="https://thecenterwire.com/fbi-epstein-video-three-minutes-missing.html" 
+                             data-width="800" 
+                             data-numposts="10"
+                             data-order-by="social"
+                             data-lazy="true"
+                             data-mobile="true">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About The Center Wire</h4>
+                    <p>Committed to delivering unbiased news by presenting multiple perspectives on every story. 
+                       Our mission is to inform, not influence.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Promise</h4>
+                    <ul>
+                        <li>No editorial bias</li>
+                        <li>Multiple viewpoints</li>
+                        <li>Fact-based reporting</li>
+                        <li>Transparent sourcing</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Get In Touch</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/TheCenterWire/" class="social-link">Follow us on Facebook</a>
+                        <a href="https://www.facebook.com/groups/thecenterwire" class="social-link">Get involved in our community</a>
+                        <a href="#" class="social-link">Newsletter - Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Center Wire. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for perspective navigation
+        document.querySelectorAll('.perspective-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all buttons
+                document.querySelectorAll('.perspective-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Smooth scroll to target section
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Copy to clipboard function
+        function copyToClipboard() {
+            const url = window.location.href;
+            
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(url).then(() => {
+                    showCopyFeedback();
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = url;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showCopyFeedback();
+            }
+        }
+
+        function showCopyFeedback() {
+            const feedback = document.createElement('div');
+            feedback.className = 'copy-feedback';
+            feedback.textContent = 'Link copied to clipboard!';
+            document.body.appendChild(feedback);
+            
+            setTimeout(() => {
+                document.body.removeChild(feedback);
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
