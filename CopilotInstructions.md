@@ -29,6 +29,7 @@ Use these step-by-step instructions to convert generated news content into a pro
 
 #### Step 2: Copy Template File
 1. **Create a new file** by copying `template.html`
+   - note CSS variables are defined in the main styles.css
 2. **Rename the file** using the format: `article-title-keywords.html`
    - Use lowercase letters
    - Replace spaces with hyphens

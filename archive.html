@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Archive - The Center Wire</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="Logo.png" alt="The Center Wire" class="logo-img">
+                <div class="logo-text">
+                    <h1>THE CENTER WIRE</h1>
+                    <p class="tagline">Unbiased News From All Perspectives</p>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="archive.html" class="nav-link active">Archive</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <section class="archive-section">
+                <h2 class="section-title">News Archive</h2>
+                <p class="archive-description">Browse our collection of older news articles and reports.</p>
+                
+                <div id="archive-list" class="archive-list">
+                    <div class="loading">Loading archive...</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About The Center Wire</h4>
+                    <p>Committed to delivering unbiased news by presenting multiple perspectives on every story. 
+                       Our mission is to inform, not influence.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Our Promise</h4>
+                    <ul>
+                        <li>No editorial bias</li>
+                        <li>Multiple viewpoints</li>
+                        <li>Fact-based reporting</li>
+                        <li>Transparent sourcing</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Get In Touch</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/TheCenterWire/" class="social-link">Follow us on Facebook</a>
+                        <a href="https://www.facebook.com/groups/thecenterwire" class="social-link">Get involved in our community</a>
+                        <a href="#" class="social-link">Newsletter - Coming Soon</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Center Wire. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Archive data - update this when adding new articles
+        const archiveData = [
+            {
+                filename: 'texas-floods-camp-mystic-tragedy.html',
+                date: 'July 9, 2025',
+                title: 'zzDevastating Texas Floods Leave 160+ Missing, 100+ Dead'
+            },
+            {
+                filename: 'trump-withdraws-national-guard-los-angeles.html',
+                date: 'July 16, 2025',
+                title: 'zzTrump Administration Orders Withdrawal of 2,000 National Guard Troops from Los Angeles'
+            }
+        ];
+
+        // Function to load and display archive list
+        async function loadArchive() {
+            const archiveContainer = document.getElementById('archive-list');
+            
+            // Try to fetch from file first (for server environments)
+            try {
+                const response = await fetch('archive-list.txt');
+                if (response.ok) {
+                    const text = await response.text();
+                    if (text.trim()) {
+                        displayArchiveFromText(text, archiveContainer);
+                        return;
+                    }
+                }
+            } catch (error) {
+                console.log('Could not load from file, using embedded data');
+            }
+            
+            // Fallback to embedded data (for local testing)
+            displayArchiveFromData(archiveData, archiveContainer);
+        }
+        
+        function displayArchiveFromText(text, container) {
+            const lines = text.trim().split('\n');
+            let archiveHTML = '';
+            
+            lines.forEach(line => {
+                const parts = line.split('|');
+                if (parts.length >= 3) {
+                    const filename = parts[0].trim();
+                    const date = parts[1].trim();
+                    const title = parts[2].trim();
+                    
+                    archiveHTML += createArchiveItem(filename, date, title);
+                }
+            });
+            
+            container.innerHTML = archiveHTML || '<div class="no-articles">No archived articles found.</div>';
+        }
+        
+        function displayArchiveFromData(data, container) {
+            if (!data || data.length === 0) {
+                container.innerHTML = '<div class="no-articles">No archived articles found.</div>';
+                return;
+            }
+            
+            let archiveHTML = '';
+            data.forEach(item => {
+                archiveHTML += createArchiveItem(item.filename, item.date, item.title);
+            });
+            
+            container.innerHTML = archiveHTML;
+        }
+        
+        function createArchiveItem(filename, date, title) {
+            return `
+                <article class="archive-item">
+                    <div class="archive-meta">
+                        <span class="archive-date">${date}</span>
+                    </div>
+                    <h3 class="archive-title">
+                        <a href="OlderNews/${filename}" class="archive-link">${title}</a>
+                    </h3>
+                </article>
+            `;
+        }
+        
+        // Load archive when page loads
+        document.addEventListener('DOMContentLoaded', loadArchive);
+    </script>
+
+    <style>
+        .archive-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .archive-description {
+            color: #666;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .archive-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        .archive-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            background: #fff;
+            transition: box-shadow 0.2s ease;
+        }
+        
+        .archive-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .archive-meta {
+            margin-bottom: 0.5rem;
+        }
+        
+        .archive-date {
+            color: #888;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .archive-title {
+            margin: 0;
+            font-size: 1.25rem;
+            line-height: 1.4;
+        }
+        
+        .archive-link {
+            color: #2c3e50;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .archive-link:hover {
+            color: #3498db;
+        }
+        
+        .loading, .no-articles, .error {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .error {
+            color: #e74c3c;
+        }
+        
+        @media (max-width: 768px) {
+            .archive-item {
+                padding: 1rem;
+            }
+            
+            .archive-title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</body>
+</html>
