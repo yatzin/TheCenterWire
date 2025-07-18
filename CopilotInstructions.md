@@ -1,6 +1,7 @@
 # The Center Wire Static HTML Website
 
 ## AI Instructions: Creating New Articles from Generated Content
+please execute these instructions
 
 ### Overview
 Use these step-by-step instructions to convert generated news content into a properly formatted HTML article for The Center Wire website using the template.html file.
@@ -162,6 +163,15 @@ Use these step-by-step instructions to convert generated news content into a pro
    - Include all sources referenced in the article
    - Use full, accurate URLs
    - Format: "Title – Publication – Date"
+
+
+#### Step 10.b: Double Check
+   Let's pause and double check you did everything as these are the things that sometimes goes wrong.
+
+   1. Verify the styling is accurate.  Sometimes you get this wrong.  Look at the styling of the latest article you just created.  Compare it to the template.  Compare it to any other past article on the root directory.  You have often said this when I asked you to fix it: "The current article I created uses hardcoded CSS values instead of the CSS variables that are defined in the main styles.css file. Let me fix this by replacing the entire style section to match the existing article format".  Is the header right?  Is the footer right?  Is the styling right?
+   2. Double check the social media meta data sections as you will get that wrong as well.  
+   3. On Index.html, make sure you didn't fumble moving any of the articles around properly.
+
 
 #### Step 11: Final Review Checklist
 - [ ] All `[PLACEHOLDER]` text has been replaced
