@@ -1,10 +1,12 @@
 # The Center Wire Static HTML Website
 
 ## AI Instructions: Creating New Articles from Generated Content
-please execute these instructions
+**CRITICAL REMINDER: Use template.html AS-IS with NO styling modifications**
 
 ### Overview
 Use these step-by-step instructions to convert generated news content into a properly formatted HTML article for The Center Wire website using the template.html file.
+
+**⚠️ STYLING WARNING: The template.html file is configured to work perfectly with styles.css. Do NOT add any `<style>` blocks or inline CSS. All styling is handled externally.**
 
 ### Prerequisites
 - Access to template.html file
@@ -23,13 +25,15 @@ Use these step-by-step instructions to convert generated news content into a pro
    - Source links and citations
    - Article category (Politics, Business, World, Technology, Health, etc.)
    - Featured image URL and caption
+   - **Image source attribution** (photographer name, platform, license information for proper crediting)
    - **Social media summary** (2-3 sentences for Facebook/Twitter sharing)
    - **SEO keywords** (relevant topics, people, places for search optimization)
    - **Image dimensions** (width and height for optimal social media display)
 
 #### Step 2: Copy Template File
 1. **Create a new file** by copying `template.html`
-   - note CSS variables are defined in the main styles.css
+   - **IMPORTANT**: The template.html file contains NO inline `<style>` blocks - all styling comes from styles.css
+   - **NOTE**: CSS variables are defined in the main styles.css file and should never be redefined inline
 2. **Rename the file** using the format: `article-title-keywords.html`
    - Use lowercase letters
    - Replace spaces with hyphens
@@ -123,6 +127,25 @@ Use these step-by-step instructions to convert generated news content into a pro
    </div>
    ```
 
+#### Step 6.5: Download Image Locally (Recommended)
+1. **Capture image source information BEFORE downloading**:
+   - **Record photographer name** (if available from Unsplash, Pexels, or other platforms)
+   - **Note the platform** (Unsplash, Pexels, Getty Images, etc.)
+   - **Save the original URL** and any photo ID numbers for reference
+   - **Check license requirements** (Creative Commons, attribution needed, etc.)
+   - Example: "Photo by John Smith on Unsplash (Photo ID: 1589994965851-a8f479c573a9)"
+
+2. **Download external images to local directory**:
+   - Use curl or similar tool to download images from external URLs (Unsplash, etc.)
+   - Save with descriptive filename: `article-topic-image.jpg`
+   - Example: `curl -o "ice-deportation-image.jpg" "[EXTERNAL_IMAGE_URL]"`
+
+3. **Update all image references**:
+   - **Article featured image**: Change `src="[EXTERNAL_URL]"` to `src="local-image.jpg"`
+   - **Open Graph meta tag**: Update `og:image` content to `https://thecenterwire.com/local-image.jpg`
+   - **Twitter Card meta tag**: Update `twitter:image` content to `https://thecenterwire.com/local-image.jpg`
+   - **Homepage featured section**: Update featured article image reference if applicable
+
 #### Step 7: Structure Article Content
 1. **Replace the opening paragraph** with your article's lead paragraph
 2. **Create sections** using h3 headings with matching IDs:
@@ -165,24 +188,82 @@ Use these step-by-step instructions to convert generated news content into a pro
    - Use full, accurate URLs
    - Format: "Title – Publication – Date"
 
+2. **Add image credit section** after the main sources:
+   ```html
+   <h4>Image Credit</h4>
+   <p>Featured image: [IMAGE_DESCRIPTION] by <a href="[PHOTOGRAPHER_PROFILE_URL]" target="_blank">[PHOTOGRAPHER_NAME]</a> on <a href="[PLATFORM_URL]" target="_blank">[PLATFORM]</a> ([Photo ID or reference if available])</p>
+   ```
+   - Example: `Featured image: Government building photograph by John Smith on <a href="https://unsplash.com/" target="_blank">Unsplash</a> (Photo ID: 1589994965851-a8f479c573a9)`
+   - If photographer name unavailable: `Featured image: [IMAGE_DESCRIPTION] from <a href="[PLATFORM_URL]" target="_blank">[PLATFORM]</a> ([Photo ID])`
 
-#### Step 10.b: Double Check
-   Let's pause and double check you did everything as these are the things that sometimes goes wrong.
 
-   1. Verify the styling is accurate.  Sometimes you get this wrong.  Look at the styling of the latest article you just created.  Compare it to the template.  Compare it to any other past article on the root directory.  You have often said this when I asked you to fix it: "The current article I created uses hardcoded CSS values instead of the CSS variables that are defined in the main styles.css file. Let me fix this by replacing the entire style section to match the existing article format".  Is the header right?  Is the footer right?  Is the styling right?
-   2. Double check the social media meta data sections as you will get that wrong as well.  
-   3. On Index.html, make sure you didn't fumble moving any of the articles around properly.
+#### Step 10.b: Critical CSS and Styling Verification
+   **⚠️ CRITICAL: Prevent CSS Conflicts and Styling Issues**
+
+   **DO NOT add any `<style>` blocks to the HTML file!** All styling is handled by the external styles.css file. Adding inline styles will cause conflicts and break the website's appearance.
+
+   **Common CSS mistakes to avoid:**
+   1. **Never add `<style>` tags** - Use only external CSS file (styles.css)
+   2. **Don't override `.article-page` padding** - It's correctly set in styles.css as `padding: 2rem` and `max-width: 1000px`
+   3. **Don't duplicate Facebook SDK** - Should only be in `<body>`, not in `<head>`
+   4. **Don't mix CSS variable references with hardcoded values** - Use CSS variables like `var(--primary-blue)`
+
+   **Double-check verification steps:**
+   1. **Verify NO `<style>` blocks exist** in the HTML file - search for `<style>` and `</style>` tags
+   2. **Compare styling with existing articles** like `fbi-epstein-video-three-minutes-missing.html`
+   3. **Check article structure** matches the pattern:
+      ```html
+      <main class="main">
+          <div class="container">
+              <div class="article-page">
+                  <a href="index.html" class="back-to-home">← Back to Home</a>
+                  <div class="article-header">
+      ```
+   4. **Verify proper header structure** - should use external styles.css, no inline styles
+   5. **Check footer structure** - should be consistent with homepage
+   6. **Test social sharing buttons** - all 5 buttons (Facebook, Twitter, LinkedIn, Email, Copy) should be present and positioned correctly
+
+   **If you catch yourself about to add CSS:**
+   - STOP and use the external styles.css file instead
+   - All article styling is already defined in styles.css
+   - The template.html should only contain HTML structure and placeholder content
 
 
 #### Step 11: Final Review Checklist
-- [ ] All `[PLACEHOLDER]` text has been replaced
-- [ ] Perspective navigation IDs match section headings
-- [ ] All links are working and accurate
-- [ ] Images load properly with appropriate alt text
-- [ ] Sources are properly formatted and linked
-- [ ] Bias rating is included and explained
+**Before considering the article complete, verify each item:**
+
+**Content Requirements:**
+- [ ] All `[PLACEHOLDER]` text has been replaced with actual content
+- [ ] Perspective navigation IDs match section headings (e.g., `#section1` → `id="section1"`)
+- [ ] All links are working and point to correct URLs
 - [ ] Read time is realistic (calculate word count ÷ 225)
-- [ ] Category matches content appropriately
+- [ ] Category matches content appropriately (POLITICS, BUSINESS, WORLD, etc.)
+
+**Image and Media:**
+- [ ] Featured image loads properly with appropriate alt text
+- [ ] Local images are downloaded and all references updated (featured image, Open Graph, Twitter Card)
+- [ ] Image captions are descriptive and relevant
+- [ ] Image credit section includes photographer attribution
+
+**Technical Verification:**
+- [ ] **NO `<style>` tags exist anywhere in the HTML file**
+- [ ] External CSS link `<link rel="stylesheet" href="styles.css">` is present
+- [ ] Back button `<a href="index.html" class="back-to-home">← Back to Home</a>` exists
+- [ ] Facebook SDK appears only once in `<body>` section
+- [ ] All 5 social sharing buttons are present (Facebook, Twitter, LinkedIn, Email, Copy)
+
+**Content Quality:**
+- [ ] Sources are properly formatted and linked
+- [ ] Bias rating is included with explanation
+- [ ] Quote blocks use proper attribution format
+- [ ] Multiple perspectives are represented in content
+
+**Meta Data:**
+- [ ] Page title follows format: `[ARTICLE TITLE] - The Center Wire`
+- [ ] Open Graph tags completed with actual URLs and descriptions
+- [ ] Twitter Card meta tags match Open Graph data
+- [ ] SEO keywords are relevant and comprehensive
+- [ ] Facebook Comments URL matches article URL exactly
 
 #### Step 12: Integration with Homepage
 1. **Add the new article to index.html**:
@@ -198,8 +279,16 @@ Use these step-by-step instructions to convert generated news content into a pro
 This maintains proper content hierarchy with newest articles at top-left, aging out to bottom-right.
 
 1. **Remove the oldest article** (Article 9):
-   - Delete the entire last `news-card` article to make space
+   - from index.html: delete the entire last `news-card` article to make space
    - This article "ages out" of the homepage
+   - Move the physical file to OlderNews Folder.  Be sure to include any local images if present into the OlderNews Folder.
+   - update arhive-list.txt to list every file in OlderNews directory in date descending order so the newest files are at the top and the oldest files are at the bottom.  This file is a simple text file that lists all files in OlderNews directory in the following format: <filename>|Month day, year|Headline
+
+   ex:
+      texas-floods-camp-mystic-tragedy.html|July 9, 2025|Devastating Texas Floods Leave 160+ Missing, 100+ Dead
+      trump-withdraws-national-guard-los-angeles.html|July 16, 2025|Trump Administration Orders Withdrawal of 2,000 National Guard Troops from Los Angeles
+
+   
 
 2. **Shift all articles down/right** (work backwards to avoid overwrites):
    - **Article 8 → Article 9 position**: Move 8th news card to 9th position
@@ -308,12 +397,17 @@ This maintains proper content hierarchy with newest articles at top-left, aging 
 - **Use recent sources** (within days/weeks of publication)
 
 ### Common Mistakes to Avoid
-1. **Forgetting to update navigation IDs** - causes broken internal links
-2. **Missing perspective in content** - undermines site's mission
-3. **Inaccurate read times** - misleads users
-4. **Broken source links** - damages credibility
-5. **Inconsistent formatting** - looks unprofessional
-6. **Missing bias rating explanation** - reduces transparency
+1. **Adding any `<style>` blocks to HTML files** - Use external styles.css only
+2. **Overriding CSS with inline styles** - All styling is pre-defined in styles.css
+3. **Duplicating Facebook SDK declarations** - Should only be in `<body>`, not `<head>`
+4. **Forgetting to update navigation IDs** - causes broken internal links
+5. **Missing perspective in content** - undermines site's mission
+6. **Inaccurate read times** - misleads users
+7. **Broken source links** - damages credibility
+8. **Inconsistent formatting** - looks unprofessional
+9. **Missing bias rating explanation** - reduces transparency
+10. **Conflicting CSS values between inline styles and external CSS** - creates visual inconsistencies
+11. **Missing back button** - `<a href="index.html" class="back-to-home">← Back to Home</a>`
 
 ### File Naming Convention
 - Use descriptive keywords from the headline
@@ -324,4 +418,27 @@ This maintains proper content hierarchy with newest articles at top-left, aging 
   - `climate-summit-reaches-agreement.html`
   - `tech-regulation-bipartisan-support.html`
   - `economic-policy-market-response.html`
+
+### CSS Troubleshooting Guide
+**If styling looks broken after article creation:**
+
+1. **Check for `<style>` blocks**: Search the HTML file for `<style>` tags and remove them completely
+2. **Verify external CSS link**: Ensure `<link rel="stylesheet" href="styles.css">` is present in `<head>`
+3. **Compare with reference article**: Use `fbi-epstein-video-three-minutes-missing.html` as structural template
+4. **Check back button**: Ensure `<a href="index.html" class="back-to-home">← Back to Home</a>` exists after `<div class="article-page">`
+5. **Validate HTML structure**: Main content should follow this pattern:
+   ```html
+   <main class="main">
+       <div class="container">
+           <div class="article-page">
+               <a href="index.html" class="back-to-home">← Back to Home</a>
+               <div class="article-header">
+   ```
+6. **Test social sharing**: All 5 buttons should display correctly (Facebook, Twitter, LinkedIn, Email, Copy)
+
+**Common fixes:**
+- Page too wide → Check `.article-page` isn't being overridden with custom padding
+- Missing back button → Add `<a href="index.html" class="back-to-home">← Back to Home</a>`
+- Wrong background color → Remove any inline background-color styles
+- Social buttons mispositioned → Remove any inline social sharing styles
 
