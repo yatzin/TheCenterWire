@@ -79,10 +79,11 @@ Use these step-by-step instructions to convert generated news content into a pro
 
 5. **Update social sharing button URLs** (in the social-sharing section):
    ```html
-   <!-- Replace [ARTICLE_URL] with full URL to article -->
+   <!-- Replace [ARTICLE_URL] with full URL to article (properly URL-encoded) -->
    <!-- Replace [ARTICLE_TITLE] with the article headline -->
    ```
    - Replace `[ARTICLE_URL]` with `https://thecenterwire.com/[FILENAME].html`
+   - **For Facebook**: Use URL-encoded version: `https%3A//thecenterwire.com/[FILENAME].html`
    - Replace `[ARTICLE_TITLE]` with the article headline (URL-encoded for Twitter)
    - Example: `https://thecenterwire.com/texas-floods-camp-mystic-tragedy.html`
 
@@ -409,6 +410,11 @@ This maintains proper content hierarchy with newest articles at top-left, aging 
 9. **Missing bias rating explanation** - reduces transparency
 10. **Conflicting CSS values between inline styles and external CSS** - creates visual inconsistencies
 11. **Missing back button** - `<a href="index.html" class="back-to-home">← Back to Home</a>`
+12. **Using placeholder URLs in sources** - Replace all `[URL]` placeholders with actual source links from GeneratedContent.txt
+13. **Incorrect bias rating** - Double-check bias assessment against article tone and provide honest explanation
+14. **Facebook sharing URL not encoded** - Use `https%3A//thecenterwire.com/...` format for Facebook sharing buttons
+15. **Missing Open Graph meta tags** - Include og:image:type, article:published_time, article:author, article:section for proper social media sharing
+16. **Not testing social sharing URLs** - Verify Facebook and Twitter sharing links work before considering article complete
 
 ### File Naming Convention
 - Use descriptive keywords from the headline
