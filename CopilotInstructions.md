@@ -375,6 +375,7 @@ This maintains proper content hierarchy with newest articles at top-left, aging 
 
 6. **Double check your work**
    - Go back and check your work.  Did you do Step 1?  Did you do Step 2?  What about Step 3?  What about Step 4? Step 5?  If anything is wrong, please correct it.
+   - double check the sources in your new article and the sources in Generated Content.  Did you use placeholders?  Don't.  Fix it.
 
 ### Content Guidelines
 
