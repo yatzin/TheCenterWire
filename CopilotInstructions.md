@@ -1,5 +1,7 @@
 # The Center Wire Static HTML Website
 
+Please execute these instructions.
+
 ## AI Instructions: Creating New Articles from Generated Content
 **CRITICAL REMINDER: Use template.html AS-IS with NO styling modifications**
 
@@ -415,6 +417,7 @@ This maintains proper content hierarchy with newest articles at top-left, aging 
 14. **Facebook sharing URL not encoded** - Use `https%3A//thecenterwire.com/...` format for Facebook sharing buttons
 15. **Missing Open Graph meta tags** - Include og:image:type, article:published_time, article:author, article:section for proper social media sharing
 16. **Not testing social sharing URLs** - Verify Facebook and Twitter sharing links work before considering article complete
+17. **Facebook sharing cache issues** - If Facebook shows "404 page not found" when sharing, use Facebook's Sharing Debugger (https://developers.facebook.com/tools/debug/) to force refresh the page cache
 
 ### File Naming Convention
 - Use descriptive keywords from the headline
