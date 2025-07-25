@@ -451,4 +451,6 @@ This maintains proper content hierarchy with newest articles at top-left, aging 
 - Missing back button → Add `<a href="index.html" class="back-to-home">← Back to Home</a>`
 - Wrong background color → Remove any inline background-color styles
 - Social buttons mispositioned → Remove any inline social sharing styles
+- Share buttons are missing icons - please fix
+- use quote-blocks where appropriate
 
