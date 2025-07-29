@@ -1,3 +1,23 @@
+/* Featured article flex layout */
+.featured-article .featured-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+.featured-article .article-image {
+    flex: 0 0 auto;
+}
+.featured-article .article-content {
+    flex: 1 1 0;
+}
+/* Limit featured article image height above the fold */
+.featured-article .article-image img {
+    max-height: 350px;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
 /* Reset and Base Styles */
 * {
     margin: 0;
